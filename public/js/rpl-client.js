@@ -8,4 +8,14 @@ class Rpl {
       console.log("Connected to rpl server");
     });
   }
+
+  publish(eventType, message) {
+    this.socket.emit(eventType, message);
+  }
+
+  on(eventName, callback) {
+    this.socket.on(eventName, (data) => {
+      callback(data);
+    });
+  }
 }
