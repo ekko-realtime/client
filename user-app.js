@@ -7,7 +7,6 @@ const port = process.env.PORT || 5000;
 
 const rpl = new Rpl({ host: "http://localhost:3000/" });
 rpl.socket.emit("subscribe");
-console.log(rpl);
 
 app.engine(
   "handlebars",

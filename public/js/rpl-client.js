@@ -1,5 +1,3 @@
-const io = require("socket.io-client");
-
 class Rpl {
   constructor({ host }) {
     this.host = host;
@@ -11,5 +9,3 @@ class Rpl {
     });
   }
 }
-
-module.exports = Rpl;
