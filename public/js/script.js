@@ -1,8 +1,11 @@
 const rpl = new Rpl({ host: "http://localhost:3000/" });
+const channel = rpl.subscribe("balloon");
+channel.bind("thought", (data) => console.log("what is this? ", data));
 
 const form = document.querySelector("form");
 const thought = document.getElementById("thought");
 const thoughts = document.getElementById("thoughts");
+
 
 form.addEventListener("submit", e => {
   console.log('reached the submit handler');
