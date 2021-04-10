@@ -12,7 +12,6 @@ class Rpl {
   }
 
   // Client emit actions will always have a channel in the payload
-  // TODO: consider changing this to "publish" - Check the PubNub method options
   publish(eventType, data) {
     const payload = {
       channel: this.channel,
