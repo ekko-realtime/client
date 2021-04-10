@@ -1,19 +1,26 @@
-
 class Rpl {
-  constructor({ host }) {
+  constructor({ host, channel }) {
     this.host = host;
-
+    this.channel = channel;
     this.socket = io(this.host);
 
     this.socket.on("connect", () => {
-      console.log("Connected to rpl server");
+      console.log("Client: Connected to rpl server");
     });
+
+    this.socket.emit("subscribe", this.channel);
   }
 
-  publish(eventType, message) {
-    this.socket.emit(eventType, message);
+  // Client emit actions will always have a channel in the payload
+  // TODO: consider changing this to "publish" - Check the PubNub method options
+  publish(eventType, data) {
+    const payload = {
+      channel: this.channel,
+      eventType,
+      data,
+    };
+    this.socket.emit("publish", payload);
   }
-
 
   on(eventName, callback) {
     this.socket.on(eventName, (data) => {
@@ -21,33 +28,7 @@ class Rpl {
     });
   }
 
-  subscribe(channel) {
-    this.socket.emit("subscribe", channel);
-    return new Channel(this.socket, channel);
-  }
-
-  unsubscribe(channel) {
-    this.socket.emit("unsubscribe", channel);
-  }
-
   disconnect() {
     this.socket.close();
   }
 }
-
-class Channel {
-  constructor(socket, channel) {
-    this.socket = socket;
-    this.channel = channel;
-  }
-
-  bind(eventName, callback) {
-    this.socket.on(eventName, (payload) => {
-      console.log(eventName, payload);
-      if (payload.channel == this.channel) {
-        callback(payload.data);
-      }
-    });
-  }
-}
-

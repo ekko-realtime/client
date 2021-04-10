@@ -22,5 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server started on port ${port}. press Ctrl + C to terminate`);
+  const message = `Client: user-app started on port ${port}`;
+  const line = new Array(message.length).fill("-").join("");
+  console.log(`${line}\n${message}\n${line}`);
 });
