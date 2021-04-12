@@ -7,19 +7,26 @@ console.log(`${line}\n${message}\n${line}`);
 // TODO: Is it ok to require users to subscribe to 1 and only 1 channel per instance? (check PubNub)
 const ekko = new Ekko({
   host: "http://localhost:3000/",
-  channel: "balloon",
 });
+
+ekko.subscribe({ channels: ["balloon"] });
 
 // Grab HTML elements
 const form = document.querySelector("form");
 const thought = document.getElementById("thought");
 const thoughts = document.getElementById("thoughts");
 
+// pubnub.publish({channel: "channelName", message: {}}, callback)
+
 // Handle form submit event
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (thought.value) {
-    ekko.publish("thought", thought.value);
+    const params = {
+      channel: "balloon",
+      message: { type: "text", content: thought.value },
+    };
+    ekko.publish(params);
     thought.value = "";
   }
 });
