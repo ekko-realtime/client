@@ -3,9 +3,9 @@ const message = `Client: front end of user-app opened in browser`;
 const line = new Array(message.length).fill("-").join("");
 console.log(`${line}\n${message}\n${line}`);
 
-// Create rpl instance & subscribe to specified channel
+// Create ekko instance & subscribe to specified channel
 // TODO: Is it ok to require users to subscribe to 1 and only 1 channel per instance? (check PubNub)
-const rpl = new Rpl({
+const ekko = new Ekko({
   host: "http://localhost:3000/",
   channel: "balloon",
 });
@@ -19,13 +19,13 @@ const thoughts = document.getElementById("thoughts");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (thought.value) {
-    rpl.publish("thought", thought.value);
+    ekko.publish("thought", thought.value);
     thought.value = "";
   }
 });
 
 // Handle socket.io event
-rpl.on("thought", (msg) => {
+ekko.on("thought", (msg) => {
   let thought = document.createElement("LI");
   thought.innerHTML = msg;
   thoughts.insertBefore(thought, thoughts.children[0]);
@@ -34,7 +34,7 @@ rpl.on("thought", (msg) => {
 
 // "info" eventType indicates informational message form the server
 // TODO: should we have a few "reserved" words for this type of thing?
-rpl.on("info", (message) => {
+ekko.on("info", (message) => {
   console.log(message);
 });
 

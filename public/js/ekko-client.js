@@ -1,11 +1,11 @@
-class Rpl {
+class Ekko {
   constructor({ host, channel }) {
     this.host = host;
     this.channel = channel;
     this.socket = io(this.host);
 
     this.socket.on("connect", () => {
-      console.log("Client: Connected to rpl server");
+      console.log("Client: Connected to ekko server");
     });
 
     this.socket.emit("subscribe", this.channel);
