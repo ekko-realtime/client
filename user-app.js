@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
-// const Rpl = require("./lib/rpl-client");
+// const ekko = require("./lib/ekko-client");
 
 const expressHandlebars = require("express-handlebars");
 const port = process.env.PORT || 5000;
 
-// const rpl = new Rpl({ host: "http://localhost:3000/" });
-// rpl.socket.emit("subscribe");
+// const ekko = new Ekko({ host: "http://localhost:3000/" });
+// ekko.socket.emit("subscribe");
 
 app.engine(
   "handlebars",
