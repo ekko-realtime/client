@@ -70,9 +70,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // Helper functions
-const addListItem = (m) => {
+const addListItem = (payload) => {
   let thought = document.createElement("LI");
-  thought.innerHTML = m.message;
+  thought.innerHTML = payload.message.content;
   thoughts.insertBefore(thought, thoughts.children[0]);
   updateStyle();
 };
