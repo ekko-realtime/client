@@ -1,8 +1,8 @@
-# rkko - user app example
+# ekko - user app example
 
 ## TODO
 
-- Add wrappers around socket.io methods in BOTH `rkko-client.js` files
+- Add wrappers around socket.io methods in BOTH `ekko-client.js` files
   - Get the `publish` and `subscribe` stuff setup
 - Add in DOM modification to update the actual DOM (see below)
 - Look into how to actually get all the code combined and loaded in... CDN? NPM package?
