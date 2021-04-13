@@ -47,6 +47,12 @@ class Ekko {
     this.socket.emit("subscribe", params);
   }
 
+  // { channels: ["balloon"] }
+
+  unsubscribe(params) {
+    this.socket.emit("unsubscribe", params);
+  }
+
   /*
   pubnub.addListener({
     message: function(m) {

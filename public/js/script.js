@@ -9,12 +9,19 @@ const ekko = new Ekko({
   host: "http://localhost:3000/",
 });
 
-ekko.subscribe({ channels: ["balloon"] });
+// ekko.subscribe({ channels: ["balloon"] });
 
 // Grab HTML elements
-const form = document.querySelector("form");
+const form = document.querySelector("#text-input");
 const thought = document.getElementById("thought");
 const thoughts = document.getElementById("thoughts");
+
+const channelSubscribeForm = document.querySelector("#channel-input");
+const channelName = document.querySelector("#channel-name");
+const channelSubscribe = document.querySelector("#channel-subscribe");
+const channelUnSubscribe = document.querySelector("#channel-unsubscribe");
+
+const subscribedChannels = [];
 
 // pubnub.publish({channel: "channelName", message: {}}, callback)
 
@@ -28,6 +35,18 @@ form.addEventListener("submit", (e) => {
     };
     ekko.publish(params);
     thought.value = "";
+  }
+});
+
+channelSubscribeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (channelName.value) {
+    const params = {
+      channels: [channelName.value],
+    };
+    subscribedChannels.push(channelName.value);
+    ekko.subscribe(params);
+    channelName.value = "";
   }
 });
 
