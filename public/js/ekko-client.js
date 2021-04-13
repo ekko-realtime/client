@@ -20,7 +20,7 @@ class Ekko {
     - remove channel
 
   add listner to ekko class
-  
+
   make ekko subscribe method
   make ekko unsubscribe method
 
@@ -51,6 +51,7 @@ class Ekko {
 
   unsubscribe(params) {
     this.socket.emit("unsubscribe", params);
+    console.log('unsubscribed from channel');
   }
 
   /*
