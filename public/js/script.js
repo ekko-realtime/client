@@ -3,6 +3,8 @@ const message = `Client: front end of user-app opened in browser`;
 const line = new Array(message.length).fill("-").join("");
 console.log(`${line}\n${message}\n${line}`);
 
+
+
 // Create ekko instance
 const ekko = new Ekko({
   host: "http://localhost:3000/",
@@ -11,6 +13,7 @@ const ekko = new Ekko({
 
 // TODO: remove auto subscribe to balloon channel
 ekko.subscribe({ channels: ["balloon"] });
+let currentChannel = "balloon"; //store most recent channel subscribed to
 
 // addListener & pass in callbacks
 ekko.addListener({
@@ -34,7 +37,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     e.preventDefault();
     if (thought.value) {
       const params = {
-        channel: "balloon",
+        channel: currentChannel,
         message: { content: thought.value },
       };
       ekko.publish(params);
