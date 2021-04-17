@@ -29,8 +29,9 @@ class Ekko {
   }
 
   subscribe(params) {
+    //TODO: add check to see if already subscribed to channel?
     this.socket.emit("subscribe", params);
-    console.log("Client: subscribed from channel");
+    console.log("Client: subscribed to channel");
   }
 
   unsubscribe(params) {
