@@ -1,17 +1,37 @@
 {
-  "name": "user-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "user-app.js",
+  "name": "ekko-client",
+  "version": "0.0.1",
+  "description": "JavaScript client to interact with realtime ekko-server",
+  "main": "./lib/ekko-client.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "start": "node user-app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekko-live/ekko-client.git"
+  },
+  "keywords": [
+    "ekko",
+    "realtime",
+    "websocket",
+    "socketio"
+  ],
+  "author": "ekko",
+  "contributors": [
+    "Alex Strick van Linschoten",
+    "Dorey Miller",
+    "Drew Holbrook",
+    "Will Lotherington <will.lotherington@hey.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ekko-live/ekko-client/issues"
+  },
+  "homepage": "https://github.com/ekko-live/ekko-client#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.0",
     "socket.io-client": "^4.0.1"
   }
 }
