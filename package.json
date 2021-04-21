@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "browserify ./lib/ekko-client.js -o ./dist/ekko-client-v$npm_package_version.js",
+    "watch": "watchify ./lib/ekko-client.js -o ./dist/ekko-client-v$npm_package_version.js --debug --verbose"
   },
   "repository": {
     "type": "git",
@@ -33,5 +34,9 @@
   "homepage": "https://github.com/ekko-live/ekko-client#readme",
   "dependencies": {
     "socket.io-client": "^4.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "watchify": "^4.0.0"
   }
 }
