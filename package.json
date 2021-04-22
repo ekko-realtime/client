@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/ekko-live/ekko-client#readme",
   "dependencies": {
+    "lil-uuid": "^0.1.1",
     "socket.io-client": "^4.0.1"
   },
   "devDependencies": {

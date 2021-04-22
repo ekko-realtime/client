@@ -23,3 +23,13 @@ npm run build
 ```bash
 npm run watch
 ```
+
+## Initialize ekko object
+
+```
+
+```
+
+### Provide a UUID
+
+https://www.npmjs.com/package/lil-uuid
