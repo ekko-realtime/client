@@ -22,10 +22,22 @@
   ],
   "author": "ekko",
   "contributors": [
-    "Alex Strick van Linschoten <https://github.com/strickvl>",
-    "Dorey Miller <https://github.com/doreymiller>",
-    "Drew Holbrook <https://github.com/dpholbrook>",
-    "Will Lotherington <https://github.com/wLotherington>"
+    {
+      "name": "Alex Strick van Linschoten",
+      "github": "<https://github.com/strickvl>"
+    },
+    {
+      "name": "Dorey Miller",
+      "github": "<https://github.com/doreymiller>"
+    },
+    {
+      "name": "Drew Holbrook",
+      "github": "<https://github.com/dpholbrook>"
+    },
+    {
+      "name": "Will Lotherington",
+      "github": "<https://github.com/wLotherington>"
+    }
   ],
   "license": "MIT",
   "bugs": {
