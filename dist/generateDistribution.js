@@ -1,1 +1,1 @@
-global.Ekko = require("../lib/client.js");
+global.Ekko = require("../lib/ekko.js");
