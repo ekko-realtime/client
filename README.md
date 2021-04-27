@@ -2,7 +2,11 @@
 
 JavaScript client to interact with realtime `ekko-server`
 
-Added develop branch
+CDN:
+
+```
+<script src="https://d3irfuxwybyrt2.cloudfront.net/ekko-client-v2.0.0.js"></script>
+```
 
 ## Update distribution file
 
