@@ -2,7 +2,7 @@
 
 A JavaScript client for Ekko, the realtime serverless platform.
 
-If you have not already done so, you should first deploy your Ekko infrastructure using the Ekko CLI [https://github.com/ekko-live/cli](https://github.com/ekko-live/cli)
+If you have not already done so, you should first deploy your Ekko infrastructure using the Ekko CLI [https://github.com/ekko-realtime/cli](https://github.com/ekko-realtime/cli)
 
 ## Download ekko-client
 
@@ -22,13 +22,13 @@ npm install ekko-realtime-client
 
 ### Get the source code
 
-[https://github.com/ekko-live/client](https://github.com/ekko-live/client)
+[https://github.com/ekko-realtime/client](https://github.com/ekko-realtime/client)
 
 ## Initialization
 
 ### Description
 
-Use this method to initialize the Ekko client. At a minimum you will need to provide the host endpoint and a valid JWT which can be generated with the [Ekko CLI](https://github.com/ekko-live/cli)
+Use this method to initialize the Ekko client. At a minimum you will need to provide the host endpoint and a valid JWT which can be generated with the [Ekko CLI](https://github.com/ekko-realtime/cli)
 
 ### Method
 
@@ -38,8 +38,8 @@ Ekko( {String host, String JWT, String AppName, String UUID} )
 
 | Parameter | Type   | Required | Defaults                | Description                                                                                                                 |
 | :-------- | :----- | :------- | :---------------------- | :-------------------------------------------------------------------------------------------------------------------------- |
-| `host`    | String | Yes      |                         | URL endpoint for your Ekko server provided by your [Ekko CLI](https://github.com/ekko-live/cli)                             |
-| `JWT`     | String | Yes      |                         | App specific JWT for authenticating your Ekko client instance provided by your [Ekko CLI](https://github.com/ekko-live/cli) |
+| `host`    | String | Yes      |                         | URL endpoint for your Ekko server provided by your [Ekko CLI](https://github.com/ekko-realtime/cli)                             |
+| `JWT`     | String | Yes      |                         | App specific JWT for authenticating your Ekko client instance provided by your [Ekko CLI](https://github.com/ekko-realtime/cli) |
 | `AppName` | String | Yes      |                         | Name of the application you are working on. Used for message routing                                                        |
 | `UUID`    | String | Optional | Randomly generated UUID | Unique identifier for each user. Useful for maintaining user state across devices                                           |
 
@@ -47,7 +47,7 @@ Note: [https://www.npmjs.com/package/lil-uuid](https://www.npmjs.com/package/lil
 
 ### Basic Usage
 
-Applications can `initialize` the Ekko client object by passing the `host` and `JWT` provided by your [Ekko CLI](https://github.com/ekko-live/cli). Each client will also need the `appName` that was used to generate the `JWT`. Each client should also pass a `UUID` that represents the user or the device that connects to th [Ekko server](https://github.com/ekko-live/server).
+Applications can `initialize` the Ekko client object by passing the `host` and `JWT` provided by your [Ekko CLI](https://github.com/ekko-realtime/cli). Each client will also need the `appName` that was used to generate the `JWT`. Each client should also pass a `UUID` that represents the user or the device that connects to th [Ekko server](https://github.com/ekko-realtime/server).
 
 ```JavaScript
 const ekko = new Ekko({
