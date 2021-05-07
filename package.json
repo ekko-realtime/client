@@ -1,6 +1,6 @@
 {
   "name": "ekko-realtime-client",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "JavaScript client to interact with realtime ekko-server",
   "main": "./lib/ekko.js",
   "directories": {
