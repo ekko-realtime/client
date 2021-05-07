@@ -1,6 +1,6 @@
 {
   "name": "ekko-realtime-client",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "JavaScript client to interact with realtime ekko-server",
   "main": "./lib/ekko.js",
   "directories": {
@@ -9,11 +9,11 @@
   "scripts": {
     "build": "browserify ./dist/generateDistribution.js | uglifyjs -o ./dist/ekko-client-v$npm_package_version.js",
     "watch": "watchify ./dist/generateDistribution.js -o ./dist/ekko-client-v$npm_package_version.js --debug --verbose",
-    "test": "jest"
+    "test": "tap"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ekko-live/ekko-client.git"
+    "url": "git+https://github.com/ekko-realtime/ekko-client.git"
   },
   "keywords": [
     "ekko",
@@ -42,16 +42,16 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ekko-live/ekko-client/issues"
+    "url": "https://github.com/ekko-realtime/ekko-client/issues"
   },
-  "homepage": "https://github.com/ekko-live/ekko-client#readme",
+  "homepage": "https://github.com/ekko-realtime/ekko-client#readme",
   "dependencies": {
     "lil-uuid": "^0.1.1",
     "socket.io-client": "^4.0.1"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
-    "jest": "^26.6.3",
+    "tap": "^15.0.6",
     "uglify-js": "^3.13.4",
     "watchify": "^4.0.0"
   }
