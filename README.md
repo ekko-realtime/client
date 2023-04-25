@@ -11,7 +11,7 @@ Download Ekko client from any of the following sources:
 ### Use the CDN
 
 ```html
-<script src="https://d3irfuxwybyrt2.cloudfront.net/ekko-client-v2.2.6.js"></script>
+<script src="https://d53k9niqffb2e.cloudfront.net/ekko-client-v2.2.6.js"></script>
 ```
 
 ### Use a package manager
